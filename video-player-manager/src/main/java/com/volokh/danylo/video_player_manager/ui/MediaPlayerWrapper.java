@@ -669,6 +669,7 @@ public abstract class MediaPlayerWrapper
     }
 
     private boolean inUiThread() {
-        return Thread.currentThread().getId() == 1;
+        return Thread.currentThread() == Looper.getMainLooper().getThread();
     }
-}
+    }
+
